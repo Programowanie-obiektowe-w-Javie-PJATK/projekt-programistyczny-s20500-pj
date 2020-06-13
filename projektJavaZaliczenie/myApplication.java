@@ -66,8 +66,9 @@ public class myApplication extends Application {
     }
 
     String show(String word) {
+        word = word.toLowerCase();
         word = word.replaceAll("\\.", "");
-        String[] stops = {",", ":", "-", "   ", "  "};
+        String[] stops = {",", ":", "-","\n", "   ", "  "};
         for (int i = 0; i < stops.length; i++) {
             word = word.replaceAll(stops[i], " ");
         }
@@ -87,6 +88,7 @@ public class myApplication extends Application {
     }
 
     void fileWriter(String word) throws java.io.IOException {
+        word = word.toLowerCase();
         FileWriter writer = new FileWriter("histogram.txt", true);
         PrintWriter output = new PrintWriter(writer);
         output.print(word);
@@ -94,8 +96,9 @@ public class myApplication extends Application {
     }
 
     String showNoPrzyimki(String word) {
+        word = word.toLowerCase();
         word = word.replaceAll("\\.", "");
-        String[] stops = {",", ":", "-", "   ", "  "};
+        String[] stops = {",", ":", "-","\n", "   ", "  "};
         for (int i = 0; i < stops.length; i++) {
             word = word.replaceAll(stops[i], " ");
         }
